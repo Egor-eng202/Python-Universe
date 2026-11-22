@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Урок N. Название</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+            <h1>Урок 2. Переменные и базовые типы данных</h1>
+
+        <h2>Теория</h2>
+        <p><strong>Переменная</strong> — имя для значения. Создаётся присваиванием:</p>
+        <pre><code>name = "Анна"
+        age = 25
+        height = 1.68
+        is_student = True</code></pre>
+        <ul>
+            <li><code>str</code> — строка: <code>"Анна"</code></li>
+            <li><code>int</code> — целое: <code>25</code></li>
+            <li><code>float</code> — дробное: <code>1.68</code></li>
+            <li><code>bool</code> — логическое: <code>True</code>/<code>False</code></li>
+            <li><code>NoneType</code> — отсутствие значения: <code>None</code></li>
+        </ul>
+        <p>Тип можно узнать через <code>type(x)</code>.</p>
+
+        <h2>Задача</h2>
+        <p>Создайте переменные <code>city</code> (строка) и <code>population</code> (целое), выведите обе и их типы.</p>
+
+        <h2>Подсказка</h2>
+        <details><summary>Показать решение</summary>
+        <pre><code>city = "Москва"
+        population = 13000000
+        print(city, type(city))
+        print(population, type(population))</code></pre></details>
+
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+    <script src="/static/navigation.js"></script>
+</body>
+</html>

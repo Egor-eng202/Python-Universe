@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Урок N. Название</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+            <h1>Урок 18. Основы ООП</h1>
+
+        <h2>Теория</h2>
+        <p>Класс — шаблон для объектов. Атрибуты — данные, методы — функции.</p>
+        <pre><code>class Dog:
+            def init(self, name):
+                self.name = name
+
+            def bark(self):
+                return self.name + " говорит: Гав!"
+
+        my_dog = Dog("Рекс")
+        print(my_dog.bark())</code></pre>
+        <p><code>init</code> — конструктор, <code>self</code> — ссылка на объект.</p>
+
+        <h2>Задача</h2>
+        <p>Создайте класс <code>Rectangle</code> с шириной и высотой и методом <code>area()</code>.</p>
+
+        <h2>Подсказка</h2>
+        <details>
+            <summary>Показать решение</summary>
+            <pre><code>class Rectangle:
+            def init(self, width, height):
+                self.width = width
+                self.height = height
+
+            def area(self):
+                return self.width * self.height
+
+        r = Rectangle(4, 5)
+        print(r.area())   # 20</code></pre>
+        </details>
+
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+    <script src="/static/navigation.js"></script>
+</body>
+</html>

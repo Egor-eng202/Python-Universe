@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Урок N. Название</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+            <h1>Урок 14. Работа с файлами</h1>
+
+        <h2>Теория</h2>
+        <p>Файл открывается через <code>open()</code>. Используйте <code>with</code> — файл закроется автоматически. Всегда указывайте <code>encoding="utf-8"</code> для кириллицы.</p>
+        <pre><code>with open("data.txt", "w", encoding="utf-8") as f:
+            f.write("Привет, файл!")
+
+        with open("data.txt", "r", encoding="utf-8") as f:
+            print(f.read())</code></pre>
+        <p>Режимы: <code>"r"</code> — чтение, <code>"w"</code> — запись (перезапись), <code>"a"</code> — добавление. Методы: <code>read()</code>, <code>readline()</code>, <code>readlines()</code>, <code>write()</code>, <code>writelines()</code>.</p>
+
+        <h2>Задача</h2>
+        <p>Запишите в файл <code>hello.txt</code> строку «Python Universe» и прочитайте её обратно.</p>
+
+        <h2>Подсказка</h2>
+        <details>
+            <summary>Показать решение</summary>
+            <pre><code>with open("hello.txt", "w", encoding="utf-8") as f:
+            f.write("Python Universe")
+
+        with open("hello.txt", "r", encoding="utf-8") as f:
+            print(f.read())</code></pre>
+        </details>
+        
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+    <script src="/static/navigation.js"></script>
+</body>
+</html>

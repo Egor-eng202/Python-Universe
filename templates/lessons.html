@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Уроки</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+    <h1>Уроки</h1>
+    <p><a id="start-link" href="/lesson1"><button id="start-btn">Начать обучение</button></a></p>
+    <hr>
+    <h2>Список уроков</h2>
+    <ul>
+        <li><a href="/lesson1">Урок 1. Введение в Python и среда разработки</a></li>
+        <li><a href="/lesson2">Урок 2. Переменные и базовые типы данных</a></li>
+        <li><a href="/lesson3">Урок 3. Ввод/вывод и форматирование строк</a></li>
+        <li><a href="/lesson4">Урок 4. Арифметические и логические операторы</a></li>
+        <li><a href="/lesson5">Урок 5. Условные конструкции</a></li>
+        <li><a href="/lesson6">Урок 6. Циклы</a></li>
+        <li><a href="/lesson7">Урок 7. Списки</a></li>
+        <li><a href="/lesson8">Урок 8. Кортежи и множества</a></li>
+        <li><a href="/lesson9">Урок 9. Словари</a></li>
+        <li><a href="/lesson10">Урок 10. Функции</a></li>
+        <li><a href="/lesson11">Урок 11. Области видимости, *args и **kwargs</a></li>
+        <li><a href="/lesson12">Урок 12. Лямбда-функции и рекурсия</a></li>
+        <li><a href="/lesson13">Урок 13. Обработка ошибок</a></li>
+        <li><a href="/lesson14">Урок 14. Работа с файлами</a></li>
+        <li><a href="/lesson15">Урок 15. Генераторы списков и yield</a></li>
+        <li><a href="/lesson16">Урок 16. Модули и пакеты</a></li>
+        <li><a href="/lesson17">Урок 17. Стандартная библиотека</a></li>
+        <li><a href="/lesson18">Урок 18. Основы ООП</a></li>
+        <li><a href="/lesson19">Урок 19. ООП: наследование и полиморфизм</a></li>
+        <li><a href="/lesson20">Урок 20. Веб-разработка (Flask)</a></li>
+        <li><a href="/lesson21">Урок 21. JSON и CSV</a></li>
+        <li><a href="/lesson22">Урок 22. Базы данных (SQLite)</a></li>
+        <li><a href="/lesson23">Урок 23. Основы Git</a></li>
+        <li><a href="/lesson24">Урок 24. Виртуальные окружения</a></li>
+        <li><a href="/lesson25">Урок 25. Финальный проект</a></li>
+    </ul>
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+<script>
+    async function updateStartButton() {
+        try {
+            const me = await Auth.me();
+            if (!me.logged_in) return; 
+
+            const progress = await Auth.getProgress();
+            if (!progress || progress.length === 0) return; 
+
+            const last = progress[progress.length - 1];
+            const btn = document.getElementById("start-btn");
+            const link = document.getElementById("start-link");
+
+            if (btn && link) {
+                btn.textContent = "Продолжить";
+                link.href = "/" + last;
+            }
+        } catch (e) {
+            console.log("Ошибка при обновлении кнопки:", e);
+        }
+    }
+    updateStartButton();
+</script>
+</body>
+</html>

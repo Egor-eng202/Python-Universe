@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Урок N. Название</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+            <h1>Урок 20. Веб-разработка (Flask)</h1>
+
+        <h2>Теория</h2>
+        <p>Flask — лёгкий веб-фреймворк. Минимальное приложение:</p>
+        <pre><code>from flask import Flask
+        app = Flask(name)
+
+        @app.route("/")
+        def index():
+            return "Привет, Flask!"
+
+        if name == "main":
+            app.run(debug=True)</code></pre>
+        <p>Шаблоны (Jinja2) рендерятся через <code>render_template("page.html")</code>, переменные передаются: <code>render_template("page.html", name="Анна")</code> и в HTML <code>{{ name }}</code>.</p>
+        <p>Этот сайт — тоже Flask!</p>
+
+        <h2>Задача</h2>
+        <p>Опишите маршрут <code>/hello</code>, возвращающий строку «Привет!».</p>
+
+        <h2>Подсказка</h2>
+        <details>
+            <summary>Показать решение</summary>
+            <pre><code>@app.route("/hello")
+        def hello():
+            return "Привет!"</code></pre>
+        </details>
+        
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+    <script src="/static/navigation.js"></script>
+</body>
+</html>

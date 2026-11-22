@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Регистрация</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+    <h1>Регистрация / Вход</h1>
+    <p id="status"></p>
+    <h2>Регистрация</h2>
+    <form id="register-form">
+        <p><label>Логин:<br><input type="text" id="reg-username" required></label></p>
+        <p><label>Пароль:<br><input type="password" id="reg-password" required></label></p>
+        <p><button type="submit">Зарегистрироваться</button></p>
+    </form>
+    <h2>Вход</h2>
+    <form id="login-form">
+        <p><label>Логин:<br><input type="text" id="login-username" required></label></p>
+        <p><label>Пароль:<br><input type="password" id="login-password" required></label></p>
+        <p><button type="submit">Войти</button></p>
+    </form>
+    <p id="user-info"></p>
+    <p><button id="logout-btn">Выйти</button></p>
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+    <script>
+        const status = document.getElementById("status");
+        const userInfo = document.getElementById("user-info");
+        async function updateUserInfo() {
+            const me = await Auth.me();
+            if (me.logged_in) {
+                userInfo.textContent = "Вы вошли как: " + me.username;
+                document.getElementById("nav-user").textContent = " | " + me.username;
+            } else {
+                userInfo.textContent = "Вы не вошли в аккаунт.";
+            }
+        }
+        document.getElementById("register-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const res = await Auth.register(document.getElementById("reg-username").value.trim(), document.getElementById("reg-password").value);
+            status.textContent = res.msg;
+            if (res.ok) updateUserInfo();
+        });
+        document.getElementById("login-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const res = await Auth.login(document.getElementById("login-username").value.trim(), document.getElementById("login-password").value);
+            status.textContent = res.msg;
+            if (res.ok) updateUserInfo();
+        });
+        document.getElementById("logout-btn").addEventListener("click", async () => {
+            const res = await Auth.logout();
+            status.textContent = res.msg;
+            updateUserInfo();
+        });
+        updateUserInfo();
+    </script>
+</body>
+</html>

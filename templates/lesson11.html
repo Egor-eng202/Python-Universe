@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Урок N. Название</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+            <h1>Урок 11. Области видимости, args и **kwargs</h1>
+
+        <h2>Теория</h2>
+        <p>Переменные внутри функции — локальные, снаружи — глобальные. <code>args</code> принимает любое число позиционных аргументов, <code>kwargs</code> — именованных.</p>
+        <pre><code>def total(*args):
+            return sum(args)
+
+        print(total(1, 2, 3))   # 6
+
+        def info(kwargs):
+            for k, v in kwargs.items():
+                print(k, v)
+
+        info(name="Анна", age=25)</code></pre>
+        <p>Ключевое слово <code>global</code> позволяет менять глобальную переменную внутри функции.</p>
+
+        <h2>Задача</h2>
+        <p>Напишите функцию <code>multiply(args)</code>, возвращающую произведение всех аргументов.</p>
+
+        <h2>Подсказка</h2>
+        <details>
+            <summary>Показать решение</summary>
+            <pre><code>def multiply(args):
+            result = 1
+            for x in args:
+                result *= x
+            return result
+
+        print(multiply(2, 3, 4))   # 24</code></pre>
+        </details>
+        
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+    <script src="/static/navigation.js"></script>
+</body>
+</html>

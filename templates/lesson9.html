@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Урок N. Название</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+            <h1>Урок 9. Словари</h1>
+
+        <h2>Теория</h2>
+        <p>Словарь хранит пары «ключ — значение».</p>
+        <pre><code>person = {"name": "Анна", "age": 25}
+        print(person["name"])           # Анна
+        person["city"] = "Москва"       # добавить
+        person["age"] = 26              # изменить
+        del person["city"]              # удалить
+
+        for key, value in person.items():
+            print(key, value)</code></pre>
+        <p>Методы: <code>keys()</code>, <code>values()</code>, <code>items()</code>, <code>get()</code> (безопасный доступ).</p>
+
+        <h2>Задача</h2>
+        <p>Создайте словарь с информацией о книге и выведите все ключи и значения.</p>
+
+        <h2>Подсказка</h2>
+        <details>
+            <summary>Показать решение</summary>
+            <pre><code>book = {"title": "Война и мир", "author": "Толстой", "year": 1869}
+        for k, v in book.items():
+            print(k, ":", v)</code></pre>
+        </details>
+
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+    <script src="/static/navigation.js"></script>
+</body>
+</html>

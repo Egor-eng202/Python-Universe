@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Урок N. Название</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+            <h1>Урок 25. Финальный проект</h1>
+
+        <h2>Теория</h2>
+        <p>Соберите всё вместе: создайте консольное приложение «Заметки» с сохранением в файл JSON.</p>
+        <ul>
+            <li>Хранение заметок — список словарей.</li>
+            <li>Загрузка/сохранение — <code>json</code>.</li>
+            <li>Меню — <code>while</code> + <code>input()</code>.</li>
+            <li>Обработка ошибок — <code>try/except</code>.</li>
+        </ul>
+
+        <h2>Задача</h2>
+        <p>Напишите программу, которая добавляет заметки, показывает их и сохраняет в <code>notes.json</code>.</p>
+
+        <h2>Подсказка</h2>
+        <details>
+            <summary>Показать решение</summary>
+            <pre><code>import json
+
+        FILE = "notes.json"
+
+        def load():
+            try:
+                with open(FILE, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except FileNotFoundError:
+                return []
+
+        def save(notes):
+            with open(FILE, "w", encoding="utf-8") as f:
+                json.dump(notes, f, ensure_ascii=False, indent=2)
+
+        notes = load()
+        while True:
+            print("\n1. Добавить 2. Показать 3. Выход")
+            choice = input("Выбор: ")
+            if choice == "1":
+                text = input("Текст: ")
+                notes.append({"text": text})
+                save(notes)
+            elif choice == "2":
+                for i, n in enumerate(notes, 1):
+                    print(i, n["text"])
+            elif choice == "3":
+                break
+            else:
+                print("Неверный выбор")</code></pre>
+        </details>
+
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+    <script src="/static/navigation.js"></script>
+</body>
+</html>

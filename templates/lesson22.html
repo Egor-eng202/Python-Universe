@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Урок N. Название</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+        <h1>Урок 22. Базы данных (SQLite)</h1>
+
+        <h2>Теория</h2>
+        <p>SQLite встроен в Python. База — один файл.</p>
+        <pre><code>import sqlite3
+
+        conn = sqlite3.connect("test.db")
+        cur = conn.cursor()
+
+        cur.execute("""CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY,
+            name TEXT
+        )""")
+        cur.execute("INSERT INTO users (name) VALUES (?)", ("Анна",))
+        conn.commit()
+
+        cur.execute("SELECT * FROM users")
+        print(cur.fetchall())
+
+        conn.close()</code></pre>
+        <p>Этот сайт хранит пользователей и прогресс в SQLite — файл <code>users.db</code>.</p>
+
+        <h2>Задача</h2>
+        <p>Создайте таблицу <code>notes</code> (id, text) и добавьте одну запись.</p>
+
+        <h2>Подсказка</h2>
+        <details>
+            <summary>Показать решение</summary>
+            <pre><code>conn = sqlite3.connect("notes.db")
+        cur = conn.cursor()
+        cur.execute("CREATE TABLE IF NOT EXISTS notes (id INTEGER PRIMARY KEY, text TEXT)")
+        cur.execute("INSERT INTO notes (text) VALUES (?)", ("Первая заметка",))
+        conn.commit()
+        conn.close()</code></pre>
+        </details>
+
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+    <script src="/static/navigation.js"></script>
+</body>
+</html>

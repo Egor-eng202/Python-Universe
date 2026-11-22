@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Урок N. Название</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+            <h1>Урок 19. ООП: наследование и полиморфизм</h1>
+
+        <h2>Теория</h2>
+        <p>Наследование позволяет создавать класс на основе другого.</p>
+        <pre><code>class Animal:
+            def init(self, name):
+                self.name = name
+
+            def speak(self):
+                return "..."
+
+        class Cat(Animal):
+            def speak(self):
+                return self.name + " говорит: Мяу"
+
+        class Dog(Animal):
+            def speak(self):
+                return self.name + " говорит: Гав"
+
+        for a in [Cat("Мурка"), Dog("Рекс")]:
+            print(a.speak())</code></pre>
+        <p>Полиморфизм — один интерфейс, разное поведение. <code>super()</code> вызывает метод родителя.</p>
+
+        <h2>Задача</h2>
+        <p>Создайте базовый класс <code>Shape</code> и наследников <code>Circle</code> и <code>Square</code> с методом <code>area()</code>.</p>
+
+        <h2>Подсказка</h2>
+        <details>
+            <summary>Показать решение</summary>
+            <pre><code>import math
+
+        class Shape:
+            def area(self):
+                return 0
+
+        class Circle(Shape):
+            def init(self, r):
+                self.r = r
+            def area(self):
+                return math.pi * self.r  2
+
+        class Square(Shape):
+            def init(self, a):
+                self.a = a
+            def area(self):
+                return self.a  2
+
+        for s in [Circle(2), Square(3)]:
+            print(round(s.area(), 2))</code></pre>
+        </details>
+        
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+    <script src="/static/navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Урок N. Название</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+            <h1>Урок 16. Модули и пакеты</h1>
+
+        <h2>Теория</h2>
+        <p>Модуль — файл <code>.py</code> с кодом. Подключается через <code>import</code>.</p>
+        <pre><code>import math
+        print(math.sqrt(16))          # 4.0
+
+        from random import randint
+        print(randint(1, 6))
+
+        import os
+        print(os.getcwd())</code></pre>
+        <p>Сторонние пакеты ставятся через <code>pip install имя</code>. Пример: <code>pip install requests</code>.</p>
+        <p>Свой модуль: создайте <code>mymodule.py</code> и импортируйте <code>import mymodule</code>.</p>
+
+        <h2>Задача</h2>
+        <p>Импортируйте <code>random</code> и выведите случайное число от 1 до 100.</p>
+
+        <h2>Подсказка</h2>
+        <details>
+            <summary>Показать решение</summary>
+            <pre><code>import random
+        print(random.randint(1, 100))</code></pre>
+        </details>
+        
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+    <script src="/static/navigation.js"></script>
+</body>
+</html>

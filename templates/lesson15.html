@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Урок N. Название</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+            <h1>Урок 15. Генераторы списков и yield</h1>
+
+        <h2>Теория</h2>
+        <p><strong>Генератор списка</strong> — компактный способ создать список.</p>
+        <pre><code>squares = [x * x for x in range(5)]
+        print(squares)             # [0, 1, 4, 9, 16]
+
+        evens = [x for x in range(10) if x % 2 == 0]</code></pre>
+        <p><strong>Генератор</strong> (<code>yield</code>) выдаёт значения по одному, экономя память.</p>
+        <pre><code>def countdown(n):
+            while n &gt; 0:
+                yield n
+                n -= 1
+
+        for x in countdown(3):
+            print(x)</code></pre>
+
+        <h2>Задача</h2>
+        <p>Создайте генератор чётных чисел от 0 до N.</p>
+
+        <h2>Подсказка</h2>
+        <details>
+            <summary>Показать решение</summary>
+            <pre><code>def evens(n):
+            for x in range(n + 1):
+                if x % 2 == 0:
+                    yield x
+
+        print(list(evens(10)))   # [0, 2, 4, 6, 8, 10]</code></pre>
+        </details>
+
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+    <script src="/static/navigation.js"></script>
+</body>
+</html>

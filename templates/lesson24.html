@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Урок N. Название</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+            <h1>Урок 24. Виртуальные окружения</h1>
+
+        <h2>Теория</h2>
+        <p>Виртуальное окружение изолирует зависимости проекта.</p>
+        <pre><code>python -m venv venv
+
+        Windows:
+        venv\Scripts\activate
+
+        macOS/Linux:
+        source venv/bin/activate
+
+        pip install flask
+        pip freeze &gt; requirements.txt</code></pre>
+        <p>Установка из файла: <code>pip install -r requirements.txt</code>. Выход: <code>deactivate</code>.</p>
+
+        <h2>Задача</h2>
+        <p>Создайте окружение, установите Flask и сохраните зависимости в файл.</p>
+
+        <h2>Подсказка</h2>
+        <details>
+            <summary>Показать решение</summary>
+            <pre><code>python -m venv venv
+        venv\Scripts\activate
+        pip install flask
+        pip freeze &gt; requirements.txt</code></pre>
+        </details>
+        
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+    <script src="/static/navigation.js"></script>
+</body>
+</html>

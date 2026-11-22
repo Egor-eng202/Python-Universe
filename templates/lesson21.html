@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Урок N. Название</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+            <h1>Урок 21. JSON и CSV</h1>
+
+        <h2>Теория</h2>
+        <p><strong>JSON</strong> — текстовый формат данных.</p>
+        <pre><code>import json
+
+        data = {"name": "Анна", "age": 25}
+        text = json.dumps(data, ensure_ascii=False)
+        print(text)
+
+        obj = json.loads(text)
+        print(obj["name"])</code></pre>
+        <p><strong>CSV</strong> — табличный формат.</p>
+        <pre><code>import csv
+
+        with open("data.csv", "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["name", "age"])
+            writer.writerow(["Анна", 25])</code></pre>
+
+        <h2>Задача</h2>
+        <p>Преобразуйте список <code>[1, 2, 3]</code> в JSON-строку и обратно.</p>
+
+        <h2>Подсказка</h2>
+        <details>
+            <summary>Показать решение</summary>
+            <pre><code>import json
+
+        s = json.dumps([1, 2, 3])
+        print(s)               # "[1, 2, 3]"
+        print(json.loads(s))   # [1, 2, 3]</code></pre>
+        </details>
+        
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+    <script src="/static/navigation.js"></script>
+</body>
+</html>

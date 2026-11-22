@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Universe — Урок N. Название</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/theme.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/lessons">Уроки</a> |
+        <a href="/report">Сообщить об ошибке</a> |
+        <a href="/register">Регистрация</a>
+        <span id="nav-user"></span>
+    </nav>
+    <hr>
+            <h1>Урок 6. Циклы</h1>
+
+        <h2>Теория</h2>
+        <p><code>for</code> перебирает последовательность, <code>while</code> работает, пока условие истинно.</p>
+        <pre><code>for i in range(5):
+            print(i)          # 0 1 2 3 4
+
+        n = 3
+        while n &gt; 0:
+            print(n)
+            n -= 1</code></pre>
+        <p><code>break</code> прерывает цикл, <code>continue</code> пропускает итерацию. <code>range(a, b)</code> — от a до b-1.</p>
+
+        <h2>Задача</h2>
+        <p>Выведите сумму чисел от 1 до 10 с помощью цикла.</p>
+
+        <h2>Подсказка</h2>
+        <details>
+            <summary>Показать решение</summary>
+            <pre><code>total = 0
+        for i in range(1, 11):
+            total += i
+        print(total)   # 55</code></pre>
+        </details>
+    <hr>
+    <footer><p>© 2026 Python Universe</p></footer>
+    <script src="/static/auth.js"></script>
+    <script src="/static/navigation.js"></script>
+</body>
+</html>
