@@ -14,29 +14,60 @@
         <a href="/register">Регистрация</a>
         <span id="nav-user"></span>
     </nav>
-    <hr>
-    <h1>Регистрация / Вход</h1>
-    <p id="status"></p>
-    <h2>Регистрация</h2>
-    <form id="register-form">
-        <p><label>Логин:<br><input type="text" id="reg-username" required></label></p>
-        <p><label>Пароль:<br><input type="password" id="reg-password" required></label></p>
-        <p><button type="submit">Зарегистрироваться</button></p>
-    </form>
-    <h2>Вход</h2>
-    <form id="login-form">
-        <p><label>Логин:<br><input type="text" id="login-username" required></label></p>
-        <p><label>Пароль:<br><input type="password" id="login-password" required></label></p>
-        <p><button type="submit">Войти</button></p>
-    </form>
-    <p id="user-info"></p>
-    <p><button id="logout-btn">Выйти</button></p>
-    <hr>
-    <footer><p>© 2026 Python Universe</p></footer>
+
+    <div class="form-container">
+        <h2>Создать аккаунт</h2>
+        <p style="text-align: center; color: var(--footer-text); margin-bottom: 20px;">Чтобы сохранять прогресс обучения</p>
+
+        <p id="status"></p>
+
+        <form id="register-form">
+            <div class="form-group">
+                <label>Придумайте логин:</label>
+                <input type="text" id="reg-username" required placeholder="Например, Egor">
+            </div>
+            <div class="form-group">
+                <label>Придумайте пароль:</label>
+                <input type="password" id="reg-password" required placeholder="Ваш надежный пароль">
+            </div>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+
+        <div class="divider"><span>уже есть аккаунт?</span></div>
+
+        <h2>Вход</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label>Логин:</label>
+                <input type="text" id="login-username" required>
+            </div>
+            <div class="form-group">
+                <label>Пароль:</label>
+                <input type="password" id="login-password" required>
+            </div>
+            <button type="submit">Войти в аккаунт</button>
+        </form>
+
+        <p style="text-align: center; margin-top: 20px;">
+            <button id="logout-btn" style="background: #64748b;">Выйти из аккаунта</button>
+        </p>
+        <p id="user-info" style="text-align: center; font-weight: bold; margin-top: 15px;"></p>
+    </div>
+
+    <footer>
+        <p>© 2026 Python Universe</p>
+    </footer>
+
     <script src="/static/auth.js"></script>
     <script>
         const status = document.getElementById("status");
         const userInfo = document.getElementById("user-info");
+
+        function showStatus(msg, isError = false) {
+            status.textContent = msg;
+            status.className = isError ? "error" : "success";
+        }
+
         async function updateUserInfo() {
             const me = await Auth.me();
             if (me.logged_in) {
@@ -46,23 +77,33 @@
                 userInfo.textContent = "Вы не вошли в аккаунт.";
             }
         }
+
         document.getElementById("register-form").addEventListener("submit", async (e) => {
             e.preventDefault();
-            const res = await Auth.register(document.getElementById("reg-username").value.trim(), document.getElementById("reg-password").value);
-            status.textContent = res.msg;
+            const res = await Auth.register(
+                document.getElementById("reg-username").value.trim(),
+                document.getElementById("reg-password").value
+            );
+            showStatus(res.msg, !res.ok);
             if (res.ok) updateUserInfo();
         });
+
         document.getElementById("login-form").addEventListener("submit", async (e) => {
             e.preventDefault();
-            const res = await Auth.login(document.getElementById("login-username").value.trim(), document.getElementById("login-password").value);
-            status.textContent = res.msg;
+            const res = await Auth.login(
+                document.getElementById("login-username").value.trim(),
+                document.getElementById("login-password").value
+            );
+            showStatus(res.msg, !res.ok);
             if (res.ok) updateUserInfo();
         });
+
         document.getElementById("logout-btn").addEventListener("click", async () => {
             const res = await Auth.logout();
-            status.textContent = res.msg;
+            showStatus(res.msg);
             updateUserInfo();
         });
+
         updateUserInfo();
     </script>
 </body>

@@ -14,63 +14,291 @@
         <a href="/register">Регистрация</a>
         <span id="nav-user"></span>
     </nav>
-    <hr>
-    <h1>Уроки</h1>
-    <p><a id="start-link" href="/lesson1"><button id="start-btn">Начать обучение</button></a></p>
-    <hr>
-    <h2>Список уроков</h2>
-    <ul>
-        <li><a href="/lesson1">Урок 1. Введение в Python и среда разработки</a></li>
-        <li><a href="/lesson2">Урок 2. Переменные и базовые типы данных</a></li>
-        <li><a href="/lesson3">Урок 3. Ввод/вывод и форматирование строк</a></li>
-        <li><a href="/lesson4">Урок 4. Арифметические и логические операторы</a></li>
-        <li><a href="/lesson5">Урок 5. Условные конструкции</a></li>
-        <li><a href="/lesson6">Урок 6. Циклы</a></li>
-        <li><a href="/lesson7">Урок 7. Списки</a></li>
-        <li><a href="/lesson8">Урок 8. Кортежи и множества</a></li>
-        <li><a href="/lesson9">Урок 9. Словари</a></li>
-        <li><a href="/lesson10">Урок 10. Функции</a></li>
-        <li><a href="/lesson11">Урок 11. Области видимости, *args и **kwargs</a></li>
-        <li><a href="/lesson12">Урок 12. Лямбда-функции и рекурсия</a></li>
-        <li><a href="/lesson13">Урок 13. Обработка ошибок</a></li>
-        <li><a href="/lesson14">Урок 14. Работа с файлами</a></li>
-        <li><a href="/lesson15">Урок 15. Генераторы списков и yield</a></li>
-        <li><a href="/lesson16">Урок 16. Модули и пакеты</a></li>
-        <li><a href="/lesson17">Урок 17. Стандартная библиотека</a></li>
-        <li><a href="/lesson18">Урок 18. Основы ООП</a></li>
-        <li><a href="/lesson19">Урок 19. ООП: наследование и полиморфизм</a></li>
-        <li><a href="/lesson20">Урок 20. Веб-разработка (Flask)</a></li>
-        <li><a href="/lesson21">Урок 21. JSON и CSV</a></li>
-        <li><a href="/lesson22">Урок 22. Базы данных (SQLite)</a></li>
-        <li><a href="/lesson23">Урок 23. Основы Git</a></li>
-        <li><a href="/lesson24">Урок 24. Виртуальные окружения</a></li>
-        <li><a href="/lesson25">Урок 25. Финальный проект</a></li>
-    </ul>
-    <hr>
-    <footer><p>© 2026 Python Universe</p></footer>
+
+    <main>
+        <header style="text-align: center; margin: 50px 20px 40px;">
+            <h1 style="font-size: 36px; margin-bottom: 10px; color: var(--accent);">Программа обучения</h1>
+            <p style="font-size: 18px; color: var(--footer-text); margin-bottom: 30px;">
+                25 шагов от новичка до уверенного разработчика
+            </p>
+
+            
+            <div class="notice-box">
+                💡 <strong>Совет:</strong> Для комфортного обучения и решения задач установите 
+                <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> — 
+                это бесплатный и мощный редактор кода, который используют профессионалы.
+            </div>
+
+            
+            <div>
+                <a id="start-link" href="/lesson1">
+                    <button id="start-btn" class="btn-primary" style="font-size: 18px; padding: 14px 35px; border-radius: 30px;">
+                        Начать обучение
+                    </button>
+                </a>
+            </div>
+        </header>
+
+        
+
+
+
+
+        <div class="lessons-grid">
+            
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 1. Введение</h3>
+                    <p>Знакомство с Python, установка среды разработки и первая программа.</p>
+                </div>
+                <a href="/lesson1"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 2. Переменные</h3>
+                    <p>Изучаем базовые типы данных: строки, целые и дробные числа.</p>
+                </div>
+                <a href="/lesson2"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 3. Ввод/вывод</h3>
+                    <p>Учимся общаться с пользователем и форматировать строки.</p>
+                </div>
+                <a href="/lesson3"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 4. Операторы</h3>
+                    <p>Арифметические действия, сравнения и логические операции.</p>
+                </div>
+                <a href="/lesson4"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 5. Условия</h3>
+                    <p>Учим программу принимать решения с помощью if, elif, else.</p>
+                </div>
+                <a href="/lesson5"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 6. Циклы</h3>
+                    <p>Как повторять действия с помощью for и while.</p>
+                </div>
+                <a href="/lesson6"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 7. Списки</h3>
+                    <p>Работа с коллекциями данных, срезы и методы списков.</p>
+                </div>
+                <a href="/lesson7"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 8. Кортежи</h3>
+                    <p>Неизменяемые коллекции (кортежи) и множества.</p>
+                </div>
+                <a href="/lesson8"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 9. Словари</h3>
+                    <p>Хранение данных в формате «ключ-значение».</p>
+                </div>
+                <a href="/lesson9"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 10. Функции</h3>
+                    <p>Создаем собственные команды и учимся возвращать результат.</p>
+                </div>
+                <a href="/lesson10"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 11. Области видимости</h3>
+                    <p>Разбираем, как работают локальные и глобальные переменные.</p>
+                </div>
+                <a href="/lesson11"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 12. Лямбда и рекурсия</h3>
+                    <p>Анонимные функции и решение задач через самовызов.</p>
+                </div>
+                <a href="/lesson12"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 13. Ошибки</h3>
+                    <p>Учимся ловить исключения с помощью try, except и finally.</p>
+                </div>
+                <a href="/lesson13"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 14. Файлы</h3>
+                    <p>Чтение и запись текстовых файлов на диске.</p>
+                </div>
+                <a href="/lesson14"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 15. Генераторы</h3>
+                    <p>Создание списков в одну строку и работа с yield.</p>
+                </div>
+                <a href="/lesson15"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 16. Модули</h3>
+                    <p>Подключение встроенных и сторонних библиотек через import.</p>
+                </div>
+                <a href="/lesson16"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 17. Стандартная библиотека</h3>
+                    <p>Изучаем полезные модули: os, datetime, random и другие.</p>
+                </div>
+                <a href="/lesson17"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 18. Основы ООП</h3>
+                    <p>Создаем первые классы и объекты, изучаем self и init.</p>
+                </div>
+                <a href="/lesson18"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 19. Наследование</h3>
+                    <p>Продвинутое ООП: наследование классов и полиморфизм.</p>
+                </div>
+                <a href="/lesson19"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 20. Веб-разработка</h3>
+                    <p>Знакомство с фреймворком Flask и создание первого сайта.</p>
+                </div>
+                <a href="/lesson20"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 21. JSON и CSV</h3>
+                    <p>Сохранение и обмен данными в популярных текстовых форматах.</p>
+                </div>
+                <a href="/lesson21"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 22. Базы данных</h3>
+                    <p>Основы работы с базами данных на примере SQLite.</p>
+                </div>
+                <a href="/lesson22"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 23. Основы Git</h3>
+                    <p>Система контроля версий: коммиты, ветки и работа с GitHub.</p>
+                </div>
+                <a href="/lesson23"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 24. Окружения</h3>
+                    <p>Виртуальные окружения venv и файлы requirements.txt.</p>
+                </div>
+                <a href="/lesson24"><button class="btn-small">Перейти</button></a>
+            </div>
+            
+
+            <div class="lesson-card">
+                <div>
+                    <h3>Урок 25. Финальный проект</h3>
+                    <p>Собираем все знания вместе и пишем полноценное приложение.</p>
+                </div>
+                <a href="/lesson25"><button class="btn-small">Перейти</button></a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Python Universe</p>
+    </footer>
+
     <script src="/static/auth.js"></script>
-<script>
-    async function updateStartButton() {
-        try {
-            const me = await Auth.me();
-            if (!me.logged_in) return; 
+    <script>
+        async function updateStartButton() {
+            try {
+                const me = await Auth.me();
+                if (!me.logged_in) return; 
 
-            const progress = await Auth.getProgress();
-            if (!progress || progress.length === 0) return; 
+                const progress = await Auth.getProgress();
+                if (!progress || progress.length === 0) return; 
 
-            const last = progress[progress.length - 1];
-            const btn = document.getElementById("start-btn");
-            const link = document.getElementById("start-link");
+                const last = progress[progress.length - 1];
+                const btn = document.getElementById("start-btn");
+                const link = document.getElementById("start-link");
 
-            if (btn && link) {
-                btn.textContent = "Продолжить";
-                link.href = "/" + last;
+                if (btn && link) {
+                    btn.textContent = "Продолжить обучение";
+                    link.href = "/" + last;
+                }
+            } catch (e) {
+                console.log("Ошибка при обновлении кнопки:", e);
             }
-        } catch (e) {
-            console.log("Ошибка при обновлении кнопки:", e);
         }
-    }
-    updateStartButton();
-</script>
+        updateStartButton();
+    </script>
 </body>
 </html>
